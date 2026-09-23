@@ -126,4 +126,5 @@ and pushes the button to the bottom. */
     margin-top: auto;
     align-self: flex-start;
     text-align: left;
+    min-width: 180px;
 }
