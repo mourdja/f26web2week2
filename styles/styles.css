@@ -124,5 +124,6 @@ and pushes the button to the bottom. */
 .emoji a {
     order: 4;
     margin-top: auto;
+    align-self: flex-start;
     text-align: left;
 }
