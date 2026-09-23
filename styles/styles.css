@@ -90,17 +90,19 @@ the content from top to bottom. */
 to control how the content appears without changing
 the HTML given for the assignment. */
 
-.emoji .icon {
+.emoji h2 {
     order: 1;
-    align-self: flex-end;
-    margin-bottom: -4rem;
+    padding-right: 5rem;
+    padding-bottom: 0.5rem;
+    min-height: 4rem;
 }
 
-.emoji h2 {
+.emoji .icon {
     order: 2;
-    padding-bottom: 1rem;
-    padding-right: 5rem;
-    min-height: 4rem;
+    align-self: flex-end;
+    margin-top: -4.5rem;
+    margin-bottom: 1rem;
+    font-size: 3rem;
 }
 
 .emoji p {
