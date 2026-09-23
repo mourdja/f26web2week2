@@ -53,132 +53,80 @@ table {
 	border-spacing: 0;
 }
 
-/**************************************************
-                MAIN STYLES
-**************************************************/
-.container{
-    margin: 0 auto;
-    /* 0 on the top and bottom, automatic on the left and right
-    (which centres the element in its parent) */
-    max-width:900px;
-    /* always have a maximum width to your site */
-    background:lightgrey;
+/**************************************
+    Main Stylesheet
+***************************************/
+.container {
+  margin: 0 auto;
+  /* 0 on the top and bottom,automatic on the left and right (with centres the element in its parent ) */
+  max-width: 900px;
+  /*always have a maximum with to your site */
+  background :lightgrey;
 }
 
-/**************************************************
-                NAV STYLES
-**************************************************/
+/******************************************************
+         Nav styles
+*******************************************************/
 
-/* the > is the "direct child" selecter - which means only
-select the element after if it is directly inside of the first
-element */
-nav > ul{
-    display:flex;
-    /* one way to spread out the elements is justify content 
-    justify-content: space-between;*/
+/*the >is the  "direct child" selecter -which means only select the element after if it is a direct child of the element before it.  In this case, only select the ul if it is a direct child of the nav element.  This is important because we have another ul in the footer and we don't want to style that one. */
+
+nav > ul {
+  display: flex;
+	/*  one way to spread out the elements is justify content justify-content:space-between */
 }
 
-nav > ul > li{
-    flex-grow:1;
-    /* flex grow allows elements to expand to fill up the space */
-}
+nav > ul > li {
+	  flex-grow: 1;
+  /* this means that each li will take up an equal amount of space in the nav bar */
+ }
 
-nav > ul > li:first-child{
-    /* this will affect only the first li */
-    flex-grow:3;
-}
+ nav > ul > li:first-child {
+  /* this will affect only the first li */
+  flex-grow: 3;
+ }
 
-nav ul a{
-    padding:5px;
-    /* 1 value adds padding on all 4 sides of the element */
-    display:block;
-    /* this changes the anchor tags from inline to block, so they
-    will be as wide as they can, and you can put padding on the top
-    and bottom */
-    background-color:darksalmon;
-    color:white;
-}
+ nav ul li ul {
+  display: none;
+ }
+  
+ nav ul a {
+  padding: 5px;
+  /* 1 value adds padding on all 4 sides of the element */
+  display: block;
+  /* this changes the anchor tags from incline to block ,so they will be as they can, and you can put padding on the top and bottom */
+  background-color: rgb(241, 205, 234);
+ }
 
-nav ul a:hover, nav ul a:active{
-    /* use a hover and active state, because there is no
-    hover on mobile */
-    background-color:lightseagreen;
-    color:darkblue;
-}
+ nav ul a:hover {
+  background-color: rgb(241, 205, 234);
+  /* this changes the background color of the anchor tag when you hover over it */
+  color: rgb(255, 255, 255);
+ }
+ /*    dropdown code   */
+ nav ul li ul {
+  display: none;
+   */
+ } 
+  /* you have to have a arent with position:relative to property contain anything with position: absolute */
 
-/*    dropdown code     */
-
-nav ul li ul{
-    display:none;
-}
-
-/* you have to have a parent with position relative to properly
-contain anything with position absolute */
-nav ul li{
-    position:relative;
-}
-
-nav ul li:hover ul{
-    display:block;
-    /* this will make it visible */
-    position:absolute;
-    width:100%;
-}
-
-/*    logo / image size     */
-/* fixed the image so it would scale relative to everything else... */
-
-/* had to use flex-direction column and flex grow to force the 
-a to take up the full height,
-
-then position relative and position absolute to make the image
-be the full height automatically */
-
-nav > ul > li:first-child{
-    display:flex;
-    flex-direction:column;
-}
-
-nav > ul > li:first-child a{
-    position:relative;
-    flex-grow:1;
-    padding-top:0;
-}
-
-nav a img{
-    position:absolute;
-    height:100%;
-}
+ nav ul li:hover ul {
+  display: block;
+  /* this will make the dropdown menu appear when you hover over the parent li */
+  position: absolute;
+  /* this will make the dropdown menu appear on top of the other content */
+ width: 100%;
+  background-color: rgb(241, 205, 234);
+  /* this will change the background color of the dropdown menu */
+ }
+ /*  logo / image size  */ 
+ nav > ul >li:first-child a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* this will center the image in the li */
+  height: 100%;
+  /* this will make the li take up the full height of the nav */
+ }
 
 
-/**************************************************
-                GRID STYLES
-**************************************************/
-main section{
-    height:500px;
-
-    display:grid;
-    grid-template-rows:repeat(1fr, 6);
-    /* the repeat means 6 rows/columns taking up 1fr each */
-
-    
-    /*
-    you can accomplish the same thing with flexbox...
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;*/
-}
-
-/* this media query means the style inside will only apply
-over 760px wide */
-@media screen and (min-width:760px){
-    main section{
-        height:250px;
-        display:grid;
-        grid-template-columns:1fr 2fr 1fr;
-        /* fr stands for fraction, and tells the column to take up
-        an amount of spaced based on the number you give it (relative
-        to the other columns) */
-        grid-template-rows:1fr 3fr;
-    }
-}
+  
