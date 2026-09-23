@@ -1,132 +1,132 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
+/* Base CSS provided in the README */
 
 body {
-	line-height: 1;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #222;
 }
 
-ol, ul {
-	list-style: none;
+.emoji {
+  border: 1px solid #222;
+  border-radius: 8px;
+  padding: 1rem;
 }
 
-blockquote, q {
-	quotes: none;
+.emoji h2 {
+  margin: 0;
+  border-bottom: 2px solid #ccc;
 }
 
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+.emoji a {
+  text-decoration: none;
+  background-color: #781BAA;
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
 }
 
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+.icon {
+  font-size: 4rem;
 }
 
-/**************************************
-    Main Stylesheet
-***************************************/
-.container {
-  margin: 0 auto;
-  /* 0 on the top and bottom,automatic on the left and right (with centres the element in its parent ) */
-  max-width: 900px;
-  /*always have a maximum with to your site */
-  background :lightgrey;
-}
 
 /******************************************************
-         Nav styles
+                Page Layout
 *******************************************************/
 
-/*the >is the  "direct child" selecter -which means only select the element after if it is a direct child of the element before it.  In this case, only select the ul if it is a direct child of the nav element.  This is important because we have another ul in the footer and we don't want to style that one. */
+/* This keeps the page content from getting too wide
+and puts it in the center of the browser. */
 
-nav > ul {
-  display: flex;
-	/*  one way to spread out the elements is justify content justify-content:space-between */
+body {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem;
 }
 
-nav > ul > li {
-	  flex-grow: 1;
-  /* this means that each li will take up an equal amount of space in the nav bar */
- }
 
- nav > ul > li:first-child {
-  /* this will affect only the first li */
-  flex-grow: 3;
- }
+/******************************************************
+                Header
+*******************************************************/
 
- nav ul li ul {
-  display: none;
- }
-  
- nav ul a {
-  padding: 5px;
-  /* 1 value adds padding on all 4 sides of the element */
-  display: block;
-  /* this changes the anchor tags from incline to block ,so they will be as they can, and you can put padding on the top and bottom */
-  background-color: rgb(241, 205, 234);
- }
+/* I added some space around the main heading. */
 
- nav ul a:hover {
-  background-color: rgb(241, 205, 234);
-  /* this changes the background color of the anchor tag when you hover over it */
-  color: rgb(255, 255, 255);
- }
- /*    dropdown code   */
- nav ul li ul {
-  display: none;
-   */
- } 
-  /* you have to have a arent with position:relative to property contain anything with position: absolute */
+.siteheader {
+  padding: 1rem 0;
+}
 
- nav ul li:hover ul {
-  display: block;
-  /* this will make the dropdown menu appear when you hover over the parent li */
-  position: absolute;
-  /* this will make the dropdown menu appear on top of the other content */
- width: 100%;
-  background-color: rgb(241, 205, 234);
-  /* this will change the background color of the dropdown menu */
- }
- /*  logo / image size  */ 
- nav > ul >li:first-child a {
+.siteheader h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+
+/******************************************************
+                Emoji Grid
+*******************************************************/
+
+/* Grid is used here because I want to organize the
+emoji cards into two equal columns. */
+
+.emojis {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+
+/******************************************************
+                Emoji Cards
+*******************************************************/
+
+/* Each card uses flexbox so I can organize its content
+from top to bottom and control where the button goes. */
+
+.emoji {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  /* this will center the image in the li */
-  height: 100%;
-  /* this will make the li take up the full height of the nav */
- }
+  flex-direction: column;
+  gap: 1rem;
+}
 
+
+/******************************************************
+                Content Order
+*******************************************************/
+
+/* The HTML has the title before the emoji.
+I use order to show the emoji first without changing
+the HTML that was provided for the assignment. */
+
+.emoji .icon {
+  order: 1;
+}
+
+.emoji h2 {
+  order: 2;
+  padding-bottom: 1rem;
+}
+
+.emoji p {
+  order: 3;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.emoji a {
+  order: 4;
+}
+
+
+/******************************************************
+                Buttons
+*******************************************************/
+
+/* margin-top auto uses the available flexbox space
+above the link. This keeps the buttons at the bottom
+even when the cards have different amounts of text. */
+
+.emoji a {
+  margin-top: auto;
+  text-align: center;
+  align-self: flex-start;
+}
 
   
