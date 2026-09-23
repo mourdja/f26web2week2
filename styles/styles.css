@@ -92,18 +92,23 @@ the HTML given for the assignment. */
 
 .emoji h2 {
     order: 2;
-    padding: 0 0 0.5rem 0;
+    padding: 0 0 0.25rem 0;
+    margin: 0;
+    font-size: 1.25rem;
 }
 
 .emoji .icon {
     order: 1;
     align-self: center;
+    font-size: 2.5rem;
+    line-height: 1;
+    margin: 0 0 0.25rem 0;
 }
 
 .emoji p {
     order: 3;
-    line-height: 1.4;
-    margin: 1rem 0;
+    line-height: 1.2;
+    margin: 0.5rem 0;
 }
 
 
@@ -120,5 +125,6 @@ and pushes the button to the bottom. */
     margin-top: auto;
     align-self: flex-start;
     text-align: left;
-    min-width: 180px;
+    min-width: 0;
+  
 }
